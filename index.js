@@ -11,35 +11,60 @@ const atTheOldToad = {
     };
   },
   addPotion(newPotion) {
+
+    const newPotionName = newPotion.name;
+    // console.log(newPotionName);
+  
+    const array = [];
     for (const potion of this.potions) {
-      const k
-  if()
-}
+      array.push(potion.name);
+    }
+      // console.log(array);
+    
 
-    // if (this.potions.includes(newPotion)) {
-    //   return `Error! Potion ${newPotion} is already in your inventory!`;
-    // }
+    if (array.includes(newPotionName)) {
+      return console.log(`Error! Potion '${newPotionName}' is already in your inventory!`);;
+    } else {
+      this.potions.push(newPotion);
+    console.log(this.potions);
 
-    this.potions.push(newPotion);
+    }
+    // console.log();
+    // this.potions.push(newPotion);
   },
-  // removePotion(potionName) {
-  //   const potionIndex = this.potions.indexOf(potionName);
+//   removePotion(potionName) {
+//     const array = [];
 
-  //   if (potionIndex === -1) {
-  //     return `Potion ${potionName} is not in inventory!`;
-  //   }
+//     for (const potion of this.potions) {
+//       array.push(potion.name);
+//     }
+//       console.log(array);
 
-  //   this.potions.splice(potionIndex, 1);
-  // },
-  // updatePotionName(oldName, newName) {
-  //   const potionIndex = this.potions.indexOf(oldName);
+//     const potionIndex = array.indexOf(potionName);
+// console.log(potionIndex);
+//     // if (potionIndex === -1) {
+//     //   return `Potion ${potionName} is not in inventory!`;
+//     // }
 
-  //   if (potionIndex === -1) {
-  //     return `Potion ${oldName} is not in inventory!`;
-  //   }
+//     this.potions.splice(potionIndex, 1);
+//     console.log(this.potions);
+//   },
+  updatePotionName(oldName, newName) {
+    const array = [];
 
-  //   this.potions.splice(potionIndex, 1, newName);
-  // },
+    for (const potion of this.potions) {
+      array.push(potion.name);
+    }
+
+    const potionIndex = array.indexOf(oldName);
+    console.log(potionIndex);
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
+    }
+
+    this.potions[potionIndex].name = newName;
+    console.log(this.potions);
+  },
   // Change code above this line
 };
 
@@ -47,8 +72,11 @@ const atTheOldToad = {
 // atTheOldToad.getPotions();
 
 // console.log(atTheOldToad.potions);
-atTheOldToad.addPotion({ name: "ereereb", price: 764 });
+// atTheOldToad.addPotion({ name: "Speerd potion", price: 764 });
 
-atTheOldToad.getPotions();
+// atTheOldToad.removePotion({ name: "Speed potion", price: 460 });
+
+atTheOldToad.updatePotionName( "Speed potion", "77777777777");
+
 
 
