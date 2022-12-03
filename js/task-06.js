@@ -1,16 +1,28 @@
+// Напиши скрипт, который при потере фокуса на
+// инпуте(событие blur), проверяет его содержимое 
+// на правильное количество введённых символов.
 
-const validationInputEl = document.querySelector('#validation-input');
+// Сколько символов должно быть в инпуте,
+//   указывается в его атрибуте data - length.
+// Если введено подходящее количество символов, то border 
+// инпута становится зелёным, если неправильное - красным.
+// Для добавления стилей, используй CSS - классы valid и
+// invalid, которые мы уже добавили в исходные файлы задания.
 
-validationInputEl.addEventListener('blur', validation);
+const validationInput = document.querySelector('#validation-input');
 
+validationInput.addEventListener('blur', onBlurValidation);
 
-function validation(event) {
-  if (event.currentTarget.value.length=== Number(validationInputEl.dataset.length)) {
-    validationInputEl.classList.add('valid');
-    validationInputEl.classList.remove('invalid');
+function onBlurValidation(event) {
+  // const lengtData = Number(validationInput.getAttribute('data-length'));
+    const lengtData = Number(validationInput.dataset.length);
+
+  
+  if (event.currentTarget.value.length ===lengtData) {
+    validationInput.classList.add('valid');
+    validationInput.classList.remove('invalid');
   } else {
-    validationInputEl.classList.add('invalid');
-    validationInputEl.classList.remove('valid');
+    validationInput.classList.add('invalid');
+    validationInput.classList.remove('valid');
   }
-// console.log(event.currentTarget.value.length);
 }

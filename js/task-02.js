@@ -14,18 +14,16 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const arrey = [];
 
-
-const ingredEl = document.querySelector('#ingredients');
-
-const brrr = [];
-
-for (const ing of ingredients) {
-  const liEl = document.createElement('li');
-  liEl.textContent = ing;
-  liEl.classList.add('item');
-  // ingredEl.append(liEl);
-  brrr.push(liEl);
+for (const ingr of ingredients) {
+  const liNewElement = document.createElement('li');
+  liNewElement.textContent = ingr;
+  liNewElement.classList.add('item');
+  arrey.push(liNewElement);
 }
 
-  ingredEl.append(...brrr);
+  
+const ingredientsEl = document.querySelector('#ingredients');
+ingredientsEl.append(...arrey);
+

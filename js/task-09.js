@@ -2,19 +2,21 @@
 //   через инлайн стиль при клике на button.change - color и 
 //   выводит значение цвета в span.color.
 
+const btnChange = document.querySelector('.change-color');
+const textColor = document.querySelector('.color');
+const bodyEl = document.querySelector('body');
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
+btnChange.addEventListener('click', onChangeColor);
+
+function onChangeColor() {
+  textColor.textContent = getRandomHexColor();
+  bodyEl.style.backgroundColor = getRandomHexColor();
 }
 
-const btnChangeColorEl = document.querySelector('.change-color');
-const bodyEl = document.querySelector("body");
-const colorEl = document.querySelector('.color');
 
-btnChangeColorEl.addEventListener('click', changeColor);
-
-function changeColor() {
-  // console.log(getRandomHexColor());
-  bodyEl.style.backgroundColor = getRandomHexColor();
-  colorEl.textContent = getRandomHexColor();
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }

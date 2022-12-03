@@ -5,13 +5,13 @@
 //   В результате при перетаскивании ползунка будет
 //    меняться размер текста.
 
-const fontSizeControlEL = document.querySelector('#font-size-control');
-const textEL = document.querySelector('#text');
+const refs = {
+  input: document.querySelector('#font-size-control'),
+  text: document.querySelector('#text'),
+};
 
+refs.input.addEventListener('input', onValueSizeText);
 
-fontSizeControlEL.addEventListener('input', changeFontSize);
-
-function changeFontSize(event) {
-  console.log(event.currentTarget.value);
-  textEL.style.fontSize = event.currentTarget.value + 'px';
+function onValueSizeText(event) {
+  refs.text.style.fontSize = (event.currentTarget.value)+'px';
 }

@@ -4,15 +4,21 @@
 //   - output.Если инпут пустой, в спане должна 
 //     отображаться строка "Anonymous".
 
-const inputEl = document.querySelector('#name-input');
-const outputEl = document.querySelector('#name-output');
 
-inputEl.addEventListener('input', inputName);
-
-function inputName(event) {
-  if (event.currentTarget.value === '') {
-    outputEl.textContent = 'Anonymous';
-  } else {
-    outputEl.textContent = event.currentTarget.value;
-  }
+const refs = {
+  nameInput: document.querySelector('#name-input'),
+  nameOutput: document.querySelector('#name-output'),
 };
+
+refs.nameInput.addEventListener('input', onInputName);
+
+function onInputName(event) {
+
+  if (event.currentTarget.value === '') {
+    refs.nameOutput.textContent = 'Anonymous';
+    
+  } else {
+    
+  refs.nameOutput.textContent = event.currentTarget.value;
+  }
+}

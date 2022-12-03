@@ -6,27 +6,25 @@
 // которых увеличивай или уменьшай значение счтетчика.
 // Обновляй интерфейс новым значением переменной counterValue.
 
+const refs = {
+  btnDecrement: document.querySelector('button[data-action="decrement"]'),
+  valueOut: document.querySelector('#value'),
+  btnIncrement: document.querySelector('button[data-action="increment"]'),
+};
+
 let counterValue = 0;
 
-const decrementEl = document.querySelector('button[data-action="decrement"]');
-const incrementEl = document.querySelector('button[data-action="increment"]');
-const valueEl = document.querySelector('#value');
+refs.btnDecrement.addEventListener('click', onDecrement);
 
-
-const increment = () => {
+function onDecrement() {
   counterValue -= 1;
-  // console.log(counterValue);
-valueEl.textContent = counterValue;
-  
+  refs.valueOut.textContent = counterValue;
+
 }
 
-const decrement = () => {
+refs.btnIncrement.addEventListener('click', onIncrement);
+
+function onIncrement() {
   counterValue += 1;
-  // console.log(counterValue);
-valueEl.textContent = counterValue;
-  
+  refs.valueOut.textContent = counterValue;
 }
-
-decrementEl.addEventListener('click', increment);
-
-incrementEl.addEventListener('click', decrement);

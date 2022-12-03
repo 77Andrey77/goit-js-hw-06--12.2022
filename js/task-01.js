@@ -5,19 +5,17 @@
 //    и количество элементов в категории(всех вложенных в него < li >).
 
 
-const itemEl = document.querySelectorAll('.item');
-console.log('Number of categories: ' + itemEl.length);
-  console.log("   ");
-
-
-
-
 const categoriesEl = document.querySelector('#categories');
-// console.log(categoriesEl.children.length);
+
+
+console.log(`Number of categories: ${categoriesEl.children.length}`);
+console.log('');
+
+// const itemElements = document.querySelectorAll('.item');
 
 for (const item of categoriesEl.children) {
-  
-  console.log('Category: ' + item.firstElementChild.textContent);
-  console.log('Elements: ' + item.lastElementChild.children.length);
-  console.log("   ");
+  console.log(`Category:  ${item.firstElementChild.textContent}`);
+  console.log(`Elements:  ${item.lastElementChild.children.length}`);
+console.log('');
+
 }
